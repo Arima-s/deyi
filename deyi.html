@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>德一公司</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+</head>
+<body>
+	<header class="header">
+		<nav class="menu" id="menu">
+			<ul>
+				<li><a href="">首页</a></li>
+				<li><a href="#product">产品</a></li>
+				<li><a href="#intro">介绍</a></li>
+				<li><a href="">关于我们</a></li>
+				<li><a href="">联系我们</a></li>
+			</ul>
+		</nav>
+		<section class="pic ">
+			<img src="img/dy_01.jpg" alt="">
+		</section>
+	</header>
+	<section class="product" id="product">
+		<div class="swiper-container" style="margin-top: 25px;padding: 0 10px;">
+		 	<div class="swiper-wrapper">
+		    	<div class="swiper-slide">
+		    		<img src="img/p1.jpg" alt="">
+		    	</div>
+		    	<div class="swiper-slide">
+		    		<img src="img/p2.jpg" alt="">
+		    	</div>
+		    	<div class="swiper-slide">
+					<img src="img/p3.jpg" alt="">
+		    	</div>
+		    	<div class="swiper-slide">
+					<img src="img/teab.jpg" alt="">
+		    	</div>
+		    	<div class="swiper-slide">
+					<img src="img/p4.jpg" alt="">
+		    	</div>
+		    	<div class="swiper-slide">
+					<img src="img/p5.jpg" alt="">
+		    	</div>
+		  	</div>
+		  <!-- 如果需要分页器 -->
+			<div class="swiper-pagination"></div>
+
+			<!-- 如果需要导航按钮 -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+
+		</div>
+	</section>
+	<section class="intro" id="intro">
+		<div class="intro-l fl">
+			<img src="img/p1.jpg" alt="">
+		</div>
+		<div class="intro-r fl">
+			<h2>介绍</h2>
+			<p>产品：台湾保真 <i>金门高粱酒</i> 和<i> 高山冻顶乌龙茶</i>。</p>
+			<p>金门高粱酒：金门高粱酒是指福建金门县的金门酒厂所生产的高粱酒，因甘洌醇厚而著称。金门酒厂于1952年9月在中华民国政府管理下的福建沿海岛屿金门岛城南门创立九龙江酒厂而开始生产的，于1956年正式更名为金门酒厂，比茅台酒厂小1岁。金门高粱酒在台湾市场占有率达80%以上，2011年销售额135亿新台币，是台湾当之无愧的第一品牌。2015年“习马会”马英九赠送已经停产的金门陈年特级高粱酒，被誉为“和平之酒”。</p>
+			<p>高山冻顶乌龙茶：乌龙茶是台湾茶业的支柱，源自中国福建，至今已有200多年历史。以青心乌龙和冻顶乌龙茶享誉茶界。</p>
+			<p>规格：</p>
+			<table>
+				<tr>
+					<td style="text-align:center;">杉林溪茶</td>
+					<td>300公克400元</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">阿里山茶</td>
+					<td>300公克300元</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">750毫升58度金门高粮酒</td>
+					<td>268元</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">1000毫升53度金门高粮酒</td>
+					<td>368元</td>
+				</tr>
+			</table>
+			<p>更多优惠，扫描二维码咨询：</p>
+			<p>业务员：颜瑞隆</p>
+			<p>电话：15668614575</p>
+			<div class="wechat">
+				<img src="img/wechat.jpg" alt="">
+			</div>
+		</div>
+		
+	</section>
+	<!-- <section class="info" id="info">
+		<div class="info-l">
+			<img src="" alt="">
+		</div>
+		<div class="info-r">
+			
+		</div>
+	</section> -->
+	<footer class="footer">
+		<p>版权所有：德一公司</p>
+		<p>公司地址：辽宁省大连市山河口区兴工北三街2A24-6</p>
+		<p>服务热线：15668614575</p>
+	</footer>
+	<script src="js/swiper-3.3.1.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>   
+		$("#menu li a").wrapInner( '<span class="out"></span>' ).append( '<span class="bg"></span>' );
+
+		// loop each anchor and add copy of text content
+		$("#menu li a").each(function() {
+			$( '<span class="over">' +  $(this).text() + '</span>' ).appendTo( this );
+		});
+
+		$("#menu li a").hover(function() {
+			// this function is fired when the mouse is moved over
+			$(".out",	this).stop().animate({'top':	'40px'},	250); // move down - hide
+			$(".over",	this).stop().animate({'top':	'0px'},		250); // move down - show
+			$(".bg",	this).stop().animate({'top':	'0px'},		120); // move down - show
+
+		}, function() {
+			// this function is fired when the mouse is moved off
+			$(".out",	this).stop().animate({'top':	'0px'},		250); // move up - show
+			$(".over",	this).stop().animate({'top':	'-40px'},	250); // move up - hide
+			$(".bg",	this).stop().animate({'top':	'-40px'},	120); // move up - hide
+		});
+		var mySwiper = new Swiper ('.swiper-container', {
+			direction : 'horizontal',
+			loop: true,
+			autoplay:5000,
+			speed: 200,
+			slidesPerView: 4,
+			paginationClickable: true,
+			spaceBetween: 20,
+			// 如果需要前进后退按钮
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			pagination : '.swiper-pagination'
+		});
+	 </script>
+</body>
+</html>
